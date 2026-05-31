@@ -664,21 +664,21 @@ def hypotenuse(a: float, b: float) -> float:
 
 def clamp(x: int | float, min_val: int | float, max_val: int | float) -> int | float:
     """
-    Restricts a value to a specified range.
+        Restricts a value to a specified range.
 
-    Parameters:
-        x (int | float):
-            Value to clamp.
+        Parameters:
+            x (int | float):
+                Value to clamp.
 
-        min_val (int | float):
-            Minimum allowed value.
+            min_val (int | float):
+                Minimum allowed value.
 
-        max_val (int | float):
-            Maximum allowed value.
+            max_val (int | float):
+                Maximum allowed value.
 
-    Returns:
-        int | float:
-            Clamped value.
+        Returns:
+            int | float:
+                Clamped value.
     """
 
     if min_val > max_val:
@@ -693,39 +693,52 @@ def distance_2d(
     y2: int | float
 ) -> float:
     """
-    Calculates the Euclidean distance between two points in 2D space.
+        Calculates the Euclidean distance between two points in 2D space.
 
-    Parameters:
-        x1 (int | float):
-            X coordinate of the first point.
+        Parameters:
+            x1 (int | float):
+                X coordinate of the first point.
 
-        y1 (int | float):
-            Y coordinate of the first point.
+            y1 (int | float):
+                Y coordinate of the first point.
 
-        x2 (int | float):
-            X coordinate of the second point.
+            x2 (int | float):
+                X coordinate of the second point.
 
-        y2 (int | float):
-            Y coordinate of the second point.
+            y2 (int | float):
+                Y coordinate of the second point.
 
-    Returns:
-        float:
-            Distance between the two points.
+        Returns:
+            float:
+                Distance between the two points.
     """
 
     return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 def degrees_to_radians(x: int | float) -> float:
     """
-    Converts degrees to radians.
+        Converts degrees to radians.
 
-    Parameters:
-        x (int | float):
-            Angle in degrees.
+        Parameters:
+            x (int | float):
+                Angle in degrees.
 
-    Returns:
-        float:
-            Angle in radians.
+        Returns:
+            float:
+                Angle in radians.
     """
     return x * importantNumbers["pi"] / 180
 
+def radians_to_degrees(x: int | float) -> float:
+    """
+        Converts radians to degrees.
+
+        Parameters:
+            x (int | float):
+                Angle in radians.
+
+        Returns:
+            float:
+                Angle in degrees.
+    """
+    return x * 180 / importantNumbers["pi"]
