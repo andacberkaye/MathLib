@@ -171,3 +171,70 @@ print("cot(0.7854) =", ts.cot(0.7854))
 
 print("cot(1.5708) =", ts.cot(1.5708))           
 # Output: ~0 (very small) (approx)
+
+# -------------------------
+# ADVANCED MATH FUNCTIONS
+# -------------------------
+
+print("hypotenuse(3, 4) =", ts.hypotenuse(3, 4))
+# Output: 5.0
+
+print("clamp(150, 0, 100) =", ts.clamp(150, 0, 100))
+# Output: 100
+
+print("clamp(-20, 0, 100) =", ts.clamp(-20, 0, 100))
+# Output: 0
+
+print("distance_2d(0, 0, 3, 4) =", ts.distance_2d(0, 0, 3, 4))
+# Output: 5.0
+
+# -------------------------
+# ANGLE CONVERSIONS
+# -------------------------
+
+print("degrees_to_radians(180) =", ts.degrees_to_radians(180))
+# Output: ~3.14159
+
+print("radians_to_degrees(3.14159) =", ts.radians_to_degrees(3.14159))
+# Output: ~180
+
+# -------------------------
+# EXP / LOG / SIGMOID
+# -------------------------
+
+print("exp(1) =", ts.exp(1))
+# Output: ~2.71828
+
+print("exp(0) =", ts.exp(0))
+# Output: 1
+
+print("sigmoid(0) =", ts.sigmoid(0))
+# Output: 0.5
+
+print("sigmoid(10) =", ts.sigmoid(10))
+# Output: ~1
+
+print("sigmoid(-10) =", ts.sigmoid(-10))
+# Output: ~0
+
+print("ln(1) =", ts.ln(1))
+# Output: ~0
+
+print("ln(2.71828) =", ts.ln(2.71828))
+# Output: ~1
+
+print("log(8, 2) =", ts.log(8, 2))
+# Output: ~3
+
+print("log(100, 10) =", ts.log(100, 10))
+# Output: ~2
+
+# -------------------------
+# CALCULUS
+# -------------------------
+
+print("derivative(x^2 at x=3) =", ts.derivative(lambda x: x**2, 3))
+# Output: ~6
+
+print("integral(x^2 from 0 to 1) =", ts.integral(lambda x: x**2, 0, 1))
+# Output: ~0.333
