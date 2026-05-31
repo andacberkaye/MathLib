@@ -1,5 +1,6 @@
 importantNumbers = {
-    "pi" : 3.141592653589793
+    "pi" : 3.141592653589793,
+    "terms": 50
 }
 
 def add(*args: float) -> float:
@@ -742,3 +743,65 @@ def radians_to_degrees(x: int | float) -> float:
                 Angle in degrees.
     """
     return x * 180 / importantNumbers["pi"]
+
+def ln(x: float) -> float:
+    """
+        Computes the natural logarithm of a number using a Taylor series approximation.
+
+        Parameters:
+            x (float):
+                A positive real number.
+
+        Returns:
+            float:
+                Natural logarithm of x (ln(x)).
+
+        Notes:
+            - x must be greater than 0.
+            - The function uses a series approximation, so accuracy depends on the number of iterations (terms).
+            - Results are approximate, not exact.
+    """
+    if x <= 0:
+        raise ValueError("x must be > 0")
+
+    k = 0
+    while x > 2:
+        x /= 2
+        k += 1
+    while x < 0.5:
+        x *= 2
+        k -= 1
+
+    n = (x - 1) / (x + 1)
+    result = 0
+
+    for i in range(1, 2 * importantNumbers["terms"], 2):
+        result += (1 / i) * (n ** i)
+
+    return 2 * result + k
+
+
+def log(x: float, base: float) -> float:
+    """
+        Computes logarithm of a number with a given base.
+
+        Parameters:
+            x (float):
+                A positive real number.
+
+            base (float):
+                Logarithm base (must be positive and not equal to 1).
+
+        Returns:
+            float:
+                Logarithm of x in the specified base.
+
+        Notes:
+            - This function uses the natural logarithm (ln) for computation:
+              log(x, base) = ln(x) / ln(base)
+            - Both x and base must be valid for logarithmic operations.
+    """
+    if base <= 0 or base == 1:
+        raise ValueError("Invalid base")
+
+    return ln(x) / ln(base)
