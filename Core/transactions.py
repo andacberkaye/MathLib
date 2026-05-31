@@ -1,3 +1,7 @@
+importantNumbers = {
+    "pi" : 3.141592653589793
+}
+
 def add(*args: float) -> float:
     """
     Adds the entered numbers in order.
@@ -710,4 +714,18 @@ def distance_2d(
     """
 
     return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+def degrees_to_radians(x: int | float) -> float:
+    """
+    Converts degrees to radians.
+
+    Parameters:
+        x (int | float):
+            Angle in degrees.
+
+    Returns:
+        float:
+            Angle in radians.
+    """
+    return x * importantNumbers["pi"] / 180
 
