@@ -680,4 +680,34 @@ def clamp(x: int | float, min_val: int | float, max_val: int | float) -> int | f
     if min_val > max_val:
         raise ValueError("min_val cannot be greater than max_val")
 
-    return max(min_val, min(x, max_val))
+    return maximum(min_val, minimum(x, max_val))
+
+def distance_2d(
+    x1: int | float,
+    y1: int | float,
+    x2: int | float,
+    y2: int | float
+) -> float:
+    """
+    Calculates the Euclidean distance between two points in 2D space.
+
+    Parameters:
+        x1 (int | float):
+            X coordinate of the first point.
+
+        y1 (int | float):
+            Y coordinate of the first point.
+
+        x2 (int | float):
+            X coordinate of the second point.
+
+        y2 (int | float):
+            Y coordinate of the second point.
+
+    Returns:
+        float:
+            Distance between the two points.
+    """
+
+    return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
