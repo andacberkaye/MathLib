@@ -1,6 +1,7 @@
 importantNumbers = {
     "pi" : 3.141592653589793,
-    "terms": 50
+    "terms": 50,
+    "h": 1e-5
 }
 
 def add(*args: float) -> float:
@@ -805,3 +806,104 @@ def log(x: float, base: float) -> float:
         raise ValueError("Invalid base")
 
     return ln(x) / ln(base)
+
+def exp(x: int | float) -> float:
+    """
+        Computes the exponential function e^x using a Taylor series approximation.
+
+        Parameters:
+            x (int | float):
+                Input value.
+
+        Returns:
+            float:
+                Approximated value of e^x.
+
+        Notes:
+            - Uses Taylor series expansion:
+              e^x = sum(x^n / n!)
+            - Accuracy depends on the number of terms defined in importantNumbers["terms"].
+    """
+    result = 0
+
+    for n in range(importantNumbers["terms"]):
+        result += (x ** n) / factorial(n)
+
+    return result
+
+def sigmoid(x: int | float) -> float:
+    """
+        Computes the sigmoid activation function.
+
+        Parameters:
+            x (int | float):
+                Input value.
+
+        Returns:
+            float:
+                Value between 0 and 1.
+
+        Notes:
+            - Defined as:
+              sigmoid(x) = 1 / (1 + e^(-x))
+            - Commonly used in machine learning and logistic regression.
+    """
+    return 1 / (1 + exp(-x))
+
+def derivative(f, x):
+    """
+        Approximates the derivative of a function at a given point using central difference method.
+
+        Parameters:
+            f (function):
+                Function to differentiate.
+
+            x (int | float):
+                Point at which derivative is calculated.
+
+        Returns:
+            float:
+                Approximate derivative at point x.
+
+        Notes:
+            - Uses central difference formula:
+              (f(x+h) - f(x-h)) / (2h)
+            - Accuracy depends on step size h.    
+    """
+
+    return (f(x + importantNumbers["h"]) - f(x - importantNumbers["h"])) / (2 * importantNumbers["h"])
+
+def integral(f, a, b):
+    """
+        Approximates the definite integral of a function using the trapezoidal rule.
+
+        Parameters:
+            f (function):
+                Function to integrate.
+
+            a (float):
+                Start of interval.
+
+            b (float):
+                End of interval.
+
+        Returns:
+            float:
+                Approximate integral value over [a, b].
+
+        Notes:
+            - Uses trapezoidal approximation:
+              area ≈ sum of trapezoids under curve
+            - Accuracy increases with higher n.
+    """
+
+    n = 1000
+    step = (b - a) / n
+    total = 0
+
+    for i in range(n):
+        x1 = a + i * step
+        x2 = x1 + step
+        total += (f(x1) + f(x2)) / 2 * step
+
+    return total
