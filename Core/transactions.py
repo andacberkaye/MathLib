@@ -658,3 +658,26 @@ def hypotenuse(a: float, b: float) -> float:
 
     return result
 
+def clamp(x: int | float, min_val: int | float, max_val: int | float) -> int | float:
+    """
+    Restricts a value to a specified range.
+
+    Parameters:
+        x (int | float):
+            Value to clamp.
+
+        min_val (int | float):
+            Minimum allowed value.
+
+        max_val (int | float):
+            Maximum allowed value.
+
+    Returns:
+        int | float:
+            Clamped value.
+    """
+
+    if min_val > max_val:
+        raise ValueError("min_val cannot be greater than max_val")
+
+    return max(min_val, min(x, max_val))
