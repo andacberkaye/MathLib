@@ -17,6 +17,7 @@ A lightweight Python math utility library providing basic arithmetic, number the
 - Power
 - Absolute value
 - Rounding (round, ceil, floor)
+- Clamp (value bounding)
 
 ### Statistics & Utilities
 - Minimum / Maximum
@@ -36,18 +37,27 @@ A lightweight Python math utility library providing basic arithmetic, number the
 - Range-based sum
 - Range-based product
 
+### Geometry
+- Distance (2D Euclidean distance)
+- Hypotenuse calculation
+
+### Trigonometry (radians)
+- sin, cos, tan, cot (Taylor series approximation)
+- Degree ↔ Radian conversion
+
 ### Mathematical Functions
 - Factorial
 - Square root
 - Cube root
 - Nth root
-- Trigonometric functions (sin, cos, tan, cot)
-- Hypotenuse calculation
 
 ### Advanced Mathematics
-- Taylor series based trigonometric calculations
-- Newton method square root approximation
-- Floating point safe calculations
+- Exponential function (exp)
+- Natural logarithm (ln)
+- Logarithm (log)
+- Sigmoid function
+- Numerical derivative (finite difference)
+- Numerical integral (trapezoidal rule)
 
 ---
 
@@ -56,8 +66,8 @@ A lightweight Python math utility library providing basic arithmetic, number the
 Clone the repository:
 
 ```bash
-git https://github.com/andacberkaye/MathLib
-cd MathLib
+    git clone https://github.com/andacberkaye/MathLib
+    cd MathLib
 ```
 ---
 
@@ -66,30 +76,10 @@ cd MathLib
 Import the module
 
 ```python
-    from Core import transactions
+    from Core import transactions as ts
 ```
 
 ## Usage Examples
-
-### Advanced Math Functions
-
-```python
-ts.round_number(3.6)
-ts.ceil_number(3.1)
-ts.floor_number(3.9)
-
-ts.cube_root(27)
-ts.nth_root(16, 4)
-
-ts.percentage(200, 15)
-
-ts.sin(0)
-ts.cos(1.5708)
-ts.tan(0.7854)
-ts.cot(0.7854)
-
-ts.hypotenuse(3, 4)
-```
 
 ### Basic Operations
 
@@ -98,6 +88,40 @@ ts.hypotenuse(3, 4)
     ts.sub(10, 3, 2)
     ts.multi(2, 3, 4)
     ts.division(10, 2)
+```
+
+### Advanced Math Functions
+
+```python
+    ts.round_number(3.6)
+    ts.ceil_number(3.1)
+    ts.floor_number(3.9)
+
+    ts.cube_root(27)
+    ts.nth_root(16, 4)
+
+    ts.percentage(200, 15)
+
+    ts.sin(0)
+    ts.cos(1.5708)
+    ts.tan(0.7854)
+    ts.cot(0.7854)
+    ts.degrees_to_radians(180)
+    ts.radians_to_degrees(3.14159)
+
+    ts.hypotenuse(3, 4)
+
+    ts.exp(1)
+    ts.ln(2.71828)
+    ts.log(8, 2)
+
+    ts.sigmoid(0)
+
+    ts.derivative(lambda x: x**2, 3)
+    ts.integral(lambda x: x**2, 0, 1)
+
+    ts.distance_2d(0, 0, 3, 4)
+    ts.clamp(150, 0, 100)   
 ```
 
 ### Number Theory
@@ -138,26 +162,26 @@ ts.hypotenuse(3, 4)
 ## Roadmap
 
 -   Expand to 50+ functions
--   Add full trigonometric system (sin, cos, tan, cot)
--   Add root functions (cube root, nth root)
--   Improve numerical accuracy and convergence control
--   Add logarithmic functions
--   Improve floating point precision handling
--   Add unit tests using pytest
+-   Add vector and matrix operations
+-   Improve numerical stability (adaptive precision methods)
+-   Add unit tests (pytest)
+-   Optimize factorial and series computations
+-   Add error handling improvements
 -   Prepare PyPI release
+-   Add documentation site (docs-style)
 
 ## Notes
 
 -   Division by zero raises errors
 -   Some functions require at least one argument
--   Floating point precision may affect range-based operations
--   The project is not yet production-ready
+-   Floating point precision may affect results
 -   Trigonometric functions use Taylor series approximation
--   Results may slightly differ from Python's math module due to floating point precision
+-   Logarithm and exponential functions use numerical approximations
+-   Results may slightly differ from Python's math module
 
 ## Status
 
-Under active development
+Under active development (experimental)
 
 ## Author
 
