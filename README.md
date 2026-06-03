@@ -1,6 +1,8 @@
 # MathLib
 [![PyPI version](https://img.shields.io/pypi/v/mathlibtr.svg)](https://pypi.org/project/mathlibtr/)
 [![Python Version](https://img.shields.io/pypi/pyversions/mathlibtr.svg)](https://pypi.org/project/mathlibtr/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 
 A lightweight Python math utility library providing basic arithmetic, number theory, sequence operations, and mathematical helper functions.
