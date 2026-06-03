@@ -95,16 +95,6 @@ pip install mathlibtr
 
 ---
 
-## Installation
-
-Clone the repository:
-
-```bash
-    git clone https://github.com/andacberkaye/MathLib
-    cd MathLib
-```
----
-
 ## Import
 
 Import the module
