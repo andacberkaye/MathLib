@@ -1,8 +1,42 @@
 # MathLib
+[![PyPI version](https://img.shields.io/pypi/v/mathlibtr.svg)](https://pypi.org/project/mathlibtr/)
+[![Python Version](https://img.shields.io/pypi/pyversions/mathlibtr.svg)](https://pypi.org/project/mathlibtr/)
+
 
 A lightweight Python math utility library providing basic arithmetic, number theory, sequence operations, and mathematical helper functions.
 
-> This project is under active development and is not yet stable for production use. The library is planned to grow to 50+ functions before being published on PyPI.
+📦 Available on PyPI
+
+## Installation
+
+### Install from PyPI
+
+```bash
+pip install mathlibtr
+```
+
+### Verify Installation
+
+```python
+from Core import transactions as ts
+
+print(ts.add(1, 2, 3))
+```
+
+### Install from Source
+
+Clone the repository:
+
+```bash
+git clone https://github.com/andacberkaye/MathLib.git
+cd MathLib
+pip install -e .
+```
+
+```bash
+pip install mathlibtr
+```
+
 
 ---
 
