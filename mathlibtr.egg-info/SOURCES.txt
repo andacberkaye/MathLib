@@ -1,8 +1,0 @@
-README.md
-pyproject.toml
-Core/__init__.py
-Core/transactions.py
-mathlibtr.egg-info/PKG-INFO
-mathlibtr.egg-info/SOURCES.txt
-mathlibtr.egg-info/dependency_links.txt
-mathlibtr.egg-info/top_level.txt
