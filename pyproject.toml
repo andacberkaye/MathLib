@@ -21,4 +21,4 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/andacberkaye/MathLib"
+Homepage = "https://github.com/andacberkaye/math-toolkit"
